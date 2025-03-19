@@ -8,6 +8,10 @@ RUN npm install
 
 COPY . .
 
+# Create .env file with build-time env vars
+ARG VITE_API_URL
+ENV VITE_API_URL=${VITE_API_URL}
+
 RUN npm run build
 
 # Production stage
