@@ -18,9 +18,9 @@ const initializeDatabase = async () => {
   try {
     console.log('Attempting to connect to MySQL...');
     db = await mysql.createConnection({
-      host: process.env.DB_HOST || 'localhost',
+      host: process.env.DB_HOST || 'database',
       user: process.env.DB_USER || 'root',
-      password: process.env.DB_PASSWORD || 'password',
+      password: process.env.DB_PASSWORD || 'test123',
       database: process.env.DB_NAME || 'todo_db',
     });
     
