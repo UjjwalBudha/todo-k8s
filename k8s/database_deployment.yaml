@@ -18,6 +18,9 @@ spec:
       containers:
         - name: database
           image: mysql:5.7
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: database-storage
           ports:
             - containerPort: 3306
           env:
@@ -25,3 +28,7 @@ spec:
               value: test123
             - name: MYSQL_DATABASE
               value: todo_db
+      volumes:
+        - name: database-storage
+          persistentVolumeClaim:
+            claimName: database-pv-claim

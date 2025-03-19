@@ -23,4 +23,3 @@ spec:
         env:
           - name: VITE_API_URL
             value: "http://backend:3001"
-
