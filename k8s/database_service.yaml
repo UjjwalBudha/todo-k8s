@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: todo-app
+spec:
+  selector:
+    app: database
+  ports:
+  - name: database
+    protocol: TCP
+    port: 3306
+    targetPort: 3306
